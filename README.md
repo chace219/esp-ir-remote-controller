@@ -47,6 +47,21 @@ This project implements a smart IR remote controller using the ESP8266 microcont
 | D7  | 13   | IR Receiver |
 | D8  | 15   | Trigger Button |
 
+### Wiring Diagram
+
+![Wiring Diagram](Wiring.png)
+
+The wiring diagram above shows the complete circuit connections for the ESP8266 IR Remote Controller. Key connections include:
+
+- **IR Transmitter (D2/GPIO4)**: Connect an IR LED with appropriate current-limiting resistor (typically 100-330Ω). For better range, consider using a transistor driver circuit.
+- **IR Receiver (D7/GPIO13)**: Connect a 38kHz IR receiver module (e.g., TSOP38238) with VCC to 3.3V, GND to ground, and OUT to D7.
+- **DHT11 Sensor (D3/GPIO0)**: Connect DHT11 with VCC to 3.3V, GND to ground, and DATA to D3. A 10kΩ pull-up resistor between DATA and VCC is recommended.
+- **Trigger Button (D8/GPIO15)**: Connect push button between D8 and ground (INPUT_PULLUP mode is used).
+- **Reset Button (D6/GPIO12)**: Connect push button between D6 and ground for configuration reset.
+- **LED Indicator (D4/GPIO2)**: Built-in LED on most ESP8266 boards, or connect external LED with resistor.
+
+**Note**: The Fritzing source file (`wiring.fzz`) is included in the repository for modifications.
+
 ## Software Dependencies
 
 ### Required Libraries
